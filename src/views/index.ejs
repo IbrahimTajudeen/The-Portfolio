@@ -1,11 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    Hello From EJS
-</body>
-</html>
+<main class="main" style="height: 100vh;">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="hero-content">
+              <h1 data-aos="fade-up" data-aos-delay="200">Hello, I'm <span class="highlight"><%= data.name %></span></h1>
+              <h2 data-aos="fade-up" data-aos-delay="300"><%= data.typo.caption %> <span class="typed" data-typed-items="<%= data.typo.items %>"></span></h2>
+              <p data-aos="fade-up" data-aos-delay="400">My name is <%= data.name %> (<%= data.nickname %>), <%= data.intro %>
+              </p>
+              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
+                <a href="portfolio" class="btn btn-primary">View My Work</a>
+                <a href="contact" class="btn btn-outline">Get In Touch</a>
+              </div>
+              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
+                <% if(data.socials) {%>
+                    <% data.socials.map((v) => { %>
+                        <a href="<%= v.link %>" title="<%= v.text %>">
+                            <i class="<%= v.icon %>"></i>
+                        </a>        
+                    <% }) %>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
+              <div class="image-wrapper">
+                <div class="position-relative overflow-hidden rounded-5">
+                  <img src="/img/profile/profile-img.jpg" alt="Ibrahim Tajudeen" class="img-fluid">
+                  <div style="height: 100%; width: 100%; display: block; position: absolute; top: 0px; left: 0px; background-color: rgba(0, 0, 0, 0.603);">
+
+                  </div>
+                </div>
+                <div class="floating-elements">
+                  <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
+                    <i class="bi bi-palette"></i>
+                    <span>Design</span>
+                  </div>
+                  
+                  <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
+                    <i class="bi bi-code-slash"></i>
+                    <span>Code</span>
+                  </div>
+                  <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
+                    <i class="bi bi-lightbulb"></i>
+                    <span>Ideas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+  </main>
