@@ -1,0 +1,125 @@
+:root{
+    --fore-color: #2f6686;
+    --fore-color-transparent: #2f66863d;
+    --background-color: #101a20;
+    --background-color-transparent: #101a203d;
+    /* #367497 */
+}
+
+.side-nav-menu > li > div{
+    display: flex;
+    align-items: center;
+}
+
+.side-nav-menu, .side-nav-menu ul{
+    padding: 0px !important;
+}
+
+.side-nav-menu div, .side-nav-menu ul li, .side-nav-menu ul li a {
+    cursor: pointer;
+    width: 100%;
+    color: var(--fore-color);
+    transition-duration: .5s;
+}
+
+.side-nav-menu div {
+    color: var(--fore-color);
+    display: flex !important;
+    font-weight: bold;
+    border-bottom: 1px solid var(--fore-color) !important;
+    padding: 0px !important;
+    justify-content: start
+}
+
+.side-nav-menu div > a{
+    padding: 12px 10px !important;
+    display: flex;
+    width: 95%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.side-nav-menu div > i{
+    /* background-color: ; */
+    padding: 10px;
+    display: flex;
+    width: 40px;
+    height: 45px;
+    margin: auto 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-nav-menu div > i::before{
+    display: block;
+    margin: 0px auto;
+}
+
+.side-nav-menu > li > div:hover{
+    color: var(--background-color);
+    background-color: var(--fore-color);
+}
+
+.side-nav-menu ul li > a {
+    color: var(--fore-color);
+    display: block;
+    height: 100%;
+    padding: 10px 5px 10px 0px;
+}
+
+.side-nav-menu ul li:hover > a{
+    color: var(--background-color);
+}
+
+.side-nav-menu ul li{
+    color: slateblue;
+   padding: 0px 0px 0px 50px;    
+    vertical-align: central;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-nav-menu ul li {
+    border-bottom: 1px solid #aaa;
+}
+
+.side-nav-menu ul li:hover{
+    color: #5748b5;
+    background-color: #a195ee9e;
+}
+
+.side-nav-menu ul li::before{
+    content: '';
+    padding: 2px;
+    border: 1px solid slateblue;
+    border-radius: 50px;
+    margin-right: 10px;
+    transition-duration: .5s;
+}
+
+.side-nav-menu ul li:hover::before{
+    background-color: slateblue;
+    margin-left: 10px;
+}
+
+
+#menu::-webkit-scrollbar {
+    border-radius: 0px;
+    width: 5px;
+}
+#menu::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 0;
+}
+
+[class*="bi-"]::before {
+    margin-right: 5px;
+}
+
+.required::before{
+    content: '* ';
+    margin-right: 5px;
+    color: darkred;
+}

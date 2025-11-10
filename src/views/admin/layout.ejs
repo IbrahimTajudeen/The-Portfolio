@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>PortFolio Management | <%= title %></title>
+    
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/offcanvas-navbar.css" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="/css/site-menu.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+
+    <style>
+        :root{
+            --fore-color: #2f6686;
+            --fore-color-transparent: #2f66863d;
+            --background-color: #101a20;
+            --background-color-transparent: #101a203d;
+            /* #367497 */
+        }
+
+        body{
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: var(--background-color);
+            color: var(--fore-color);
+        }
+
+        body * {
+            color: var(--fore-color);
+            background-color: var(--background-color);
+        }
+
+       #page-body input, #page-body textarea{
+            border: 1px solid var(--fore-color);
+            color: var(--fore-color);
+            outline: none;
+       }
+       
+       #page-body input:disabled, #page-body textarea:disabled{
+            border: 1px solid var(--fore-color-transparent);
+       }
+
+       #page-body input:focus, #page-body textarea:focus
+       {
+            box-shadow: 0px 0px 10px 5px var(--fore-color-transparent);
+       }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg
+
+        {
+            font-size: 3.5rem;
+        }
+
+        }
+
+        .b-example-divider {
+            width: 100%;
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+        .btn-bd-primary {
+            --bd-violet-bg: #712cf9;
+            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+            --bs-btn-font-weight: 600;
+            --bs-btn-color: var(--bs-white);
+            --bs-btn-bg: var(--bd-violet-bg);
+            --bs-btn-border-color: var(--bd-violet-bg);
+            --bs-btn-hover-color: var(--bs-white);
+            --bs-btn-hover-bg: #6528e0;
+            --bs-btn-hover-border-color: #6528e0;
+            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+            --bs-btn-active-color: var(--bs-btn-hover-color);
+            --bs-btn-active-bg: #5a23c8;
+            --bs-btn-active-border-color: #5a23c8;
+        }
+
+        .bd-mode-toggle {
+            z-index: 1500;
+        }
+
+        .bd-mode-toggle .dropdown-menu .active .bi {
+            display: block !important;
+        }
+    </style>
+
+</head>
+<body class="w-100 overflow-hidden mb-0 pb-0 overflow-x-hidden overflow-y-auto" style="height: 100vh; ">
+   
+    <% if(page !== 'login') { %>
+        <%- include('../components/admin-header'); -%>
+    <% } %>
+
+    <main class="container-fluid position-relative px-0" id="nexo-box">
+        
+        <div class="offcanvas offcanvas-start" style="background-color: var(--background-color)" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header" style="border-bottom: 1px solid var(--fore-color)">
+                <h5 class="offcanvas-title" id="offcanvasLabel" style="color: var(--fore-color)">Portfolio Management</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+                <div class="">
+                    <div class="d-flex justify-content-center align-items-center position-relative p-2" style="height: 20vh; background-color: var(--background-color-transparent);">
+                        <div class="rounded m-2 w-100" style="box-shadow: 0px 0px 10px 1px var(--fore-color)">
+                            <div class="d-flex">
+                                <div class="p-2 d-flex justify-content-center align-items-center">
+                                    <div class="rounded-circle overflow-hidden" style="border: 1px solid var(--fore-color); height: 80px; width: 80px;" >
+                                        <img src="/img/hero-bg.jpg" class="object-fit-cover h-100 w-100"/>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="p-2">
+                                        <ul class="list-unstyled my-auto" style="color: var(--fore-color)">
+                                            <li><span class="fs-4 lead">Welcome!</span></li>
+                                            <li><b><%= data.nickname %></b></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ul class="list-unstyled w-100 side-nav-menu">
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-speedometer2 ms-3 me-2"></i> Dashboard</a>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Home</a>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> About Me</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Resume</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Services</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Portfolio</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Contact</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-gear ms-3 me-2"></i> Settings</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Tesmonials</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Blog</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Media Library</a>
+                            </div>
+                        </li>
+
+                        <li class="">
+                            <div class="w-100 p-2 d-flex align-items-center border-0 collapsed">
+                                <a href="/admin/"><i class="bi-house ms-3 me-2"></i> Analytic Reports</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-body" class="position-relative px-3 m-1 rounded-2 " >
+            <%- include(`./${page}`); -%>
+
+            <% if(page !== 'login') { %>
+                <%- include('../components/admin-footer'); -%>
+            <% } %>
+        </div>
+
+	</main>
+    <script src="/js/offcanvas-navbar.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+

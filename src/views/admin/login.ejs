@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PortFolio Management | <%= title %></title>
+    
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/offcanvas-navbar.css" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Favicons -->
+    <link href="/img/favicon.png" rel="icon">
+    <link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        :root{
+            --fore-color: #2f6686;
+            --fore-color-transparent: #2f66863d;
+            --background-color: #101a20;
+            --background-color-transparent: #101a203d;
+            /* #367497 */
+        }
+
+        fieldset{
+            position: relative;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid var(--fore-color);
+            transition-duration: .5s;
+        }
+
+        fieldset:focus-within{
+            box-shadow: 0px 0px 5px 5px var(--fore-color-transparent);
+        }
+
+        fieldset > legend{
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        fieldset > input{
+            width: 100%;
+            display: block;
+            font-size: 13px;
+            padding: 5px;
+            border: none;
+            outline: none;
+            color: var(--fore-color);
+            background-color: transparent;
+            caret-color: var(--fore-color);
+        }
+
+        /* fieldset > input:has(:content())
+        {
+            background-color: #2f6686;
+        } */
+
+        button[type="submit"]
+        {
+            background-color: var(--fore-color);
+            font-weight: bold;
+            border: 1px solid var(--fore-color);
+            transition-duration: .5s;
+        }
+
+        button[type="submit"]:hover
+        {
+            background-color: var(--background-color);
+            border: 1px solid var(--fore-color);
+            color:  var(--fore-color);
+            /* text-shadow: 0px 0px 5px  #2f66867c; */
+            box-shadow: 0px 0px 10px 1px var(--fore-color-transparent);
+        }
+
+        button[type="submit"]:active{
+            transform: scale(0.989);
+        }
+
+        a{
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--fore-color);
+            transition-duration: .5s;
+        }
+
+        a:hover{
+            text-shadow: 0px 0px 5px var(--fore-color);
+            color: var(--fore-color);
+        }
+
+    </style>
+</head>
+<body class="d-flex justify-content-center align-items-center" style="width: 100vw; height: 100vh; background-color: var(--background-color);">
+    <form class="rounded p-4" action="/auth/login/" method="post" style="width: 350px; box-shadow: 0px 0px 10px 5px var(--fore-color-transparent); backdrop-filter: blur(5px); background-color: transparent; color: var(--fore-color);">
+        <h2 class="text-center pb-3">Login Form</h2>
+        <fieldset class="w-100 mb-3 rounded">
+            <legend class="fs-6 fw-bold" for="username">Username:</legend>
+            <input type="text" id="username" class="" required />
+            
+        </fieldset>
+
+        <fieldset class="w-100 mb-3 rounded">
+            <legend class="fs-6 fw-bold" for="password">Password:</legend>
+            <input type="password" id="password" class="" required />
+        </fieldset>
+
+        <div class="text-center p-3">
+            <button type="submit" class="d-block btn w-100 mb-2">
+                Login
+            </button>
+            <a href="#" type="submit d-block">
+                Forget Passowrd
+            </a>
+        </div>
+    </form>
+</body>
+</html>

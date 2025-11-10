@@ -1,0 +1,55 @@
+    <nav class="navbar navbar-expand-lg fixed-top" style="border-bottom: 1px solid var(--fore-color); background-color: var(--background-color);" aria-label="Main navigation">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasMenu" role="button" aria-controls="offcanvasMenu" >M</a>
+            </div>
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
+                    <li class="nav-item">
+                        <a class="nav-link active bi-speedometer2" aria-current="page" style="color: var(--fore-color)" href="/Management/Index">My Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bi-bell" style="color: var(--fore-color)" href="#">Notifications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bi-universal-access" style="color: var(--fore-color)" href="#">Switch account</a>
+                    </li>
+                    <li class="nav-item dropdown" >
+                        <a class="nav-link dropdown-toggle bi-gear" style="color: var(--fore-color)" href="#" data-bs-toggle="dropdown" aria-expanded="false">Settings</a>
+                        <ul class="dropdown-menu" style="background-color: var(--background-color)">
+                            <li><a class="dropdown-item" style="color: var(--fore-color)" href="/accounts/logout">Log Out</a></li>
+                            <li><a class="dropdown-item" style="color: var(--fore-color)" href="#">Account Settings</a></li>
+                            <li><a class="dropdown-item" style="color: var(--fore-color)" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" style="color: var(--fore-color)" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="nav-scroller my-3" style="box-shadow: 0px 5px 5px 1px var(--fore-color-transparent)">
+        <nav class="nav" aria-label="Secondary navigation">
+            <a class="nav-link active" aria-current="page" href="Index">Dashboard</a>
+            <a class="nav-link" href="#">
+                Friends
+                <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
+            </a>
+            <a class="nav-link" href="#">Explore</a>
+            <a class="nav-link" href="#">Suggestions</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+        </nav>
+    </div>
