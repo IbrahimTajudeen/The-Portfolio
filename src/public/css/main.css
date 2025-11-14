@@ -25,6 +25,10 @@
   --accent-color: #1387c1; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #141f26; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --fore-btn-color: #2f8fc7;
+  --fore-color-transparent: #2f66863d;
+  --background-btn-color: #101a20;
+  --background-color-transparent: #101a2096;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -2828,7 +2832,7 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 50%);
 }
 
-.contact .contact-form .btn {
+/* .contact .contact-form .btn {
   background-color: color-mix(in srgb, var(--surface-color), transparent 80%);
   color: var(--contrast-color);
   padding: 1rem 2rem;
@@ -2845,7 +2849,28 @@ section,
 
 .contact .contact-form .btn:hover {
   background-color: color-mix(in srgb, var(--surface-color), transparent 70%);
-}
+} */
+
+button[type="submit"]
+        {
+            background-color: var(--fore-color);
+            font-weight: bold;
+            border: 1px solid var(--fore-color);
+            transition-duration: .5s;
+        }
+
+        button[type="submit"]:hover
+        {
+            background-color: var(--fore-btn-color);
+            border: 1px solid var(--fore-color);
+            color:  var(--background-btn-color);
+            /* text-shadow: 0px 0px 5px  #2f66867c; */
+            box-shadow: 0px 0px 10px 5px var(--fore-color-transparent);
+        }
+
+        button[type="submit"]:active{
+            transform: scale(0.98);
+        }
 
 /*--------------------------------------------------------------
 # Starter Section Section

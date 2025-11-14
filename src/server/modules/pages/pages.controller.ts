@@ -6,6 +6,7 @@ import { UpdatePageDto } from './dto/update-page.dto';
 import { flushCompileCache } from 'module';
 import { title } from 'process';
 import { not } from 'rxjs/internal/util/not';
+import { text } from 'stream/consumers';
 
 @Controller()
 export class PagesController {
@@ -234,7 +235,87 @@ I build fast, secure, and scalable applications using modern technologies like N
                 progress: 85
               }
             ]
-          }
+          },
+          hobby: [
+            {
+              icon: 'bi bi-magic',
+              text: 'Minimalism'
+            },
+            {
+              icon: 'bi bi-code-slash',
+              text: 'Code' 
+            },
+            { icon: 'bi bi-book',
+              text: 'Reading' 
+            },
+            {
+              icon: 'bi bi-geo-alt',
+              text: 'Travel'
+            },
+            {
+              icon: 'bi bi-brush',
+              text: 'Sketching'
+            }
+          ],
+          stats: [
+            {
+              text: 'Statisfied Clients',
+              amount: '100',
+              symbol: '%'
+            },
+            {
+              text: 'Projects Completed',
+              amount: '20',
+              symbol: '+'
+            },
+            {
+              text: 'Years of Experience',
+              amount: (new Date().getFullYear() - 2019).toString(),
+              symbol: '+'
+            }
+          ],
+          testmonial_caption: 'The impact of my work, told by those who’ve experienced it.',
+          testimonials: [
+            {
+              name: 'Dr. Bode Awofeso Olatunde',
+              position: 'Hospital Administrator',
+              text: 'Ibrahim delivered our entire Hospital Management System exactly the way we envisioned it. The multi-branch structure, security levels, and user roles were implemented flawlessly. Reliable, fast, and extremely professional.',
+              stars: 5,
+              image: '/img/person/person-m-9.webp'
+            },
+            {
+              name: 'Grace Okon',
+              position: 'Product Manager, PayFlex Services',
+              text: 'Our VAS and airtime billing platform became 10x more efficient after Ibrahim rebuilt it. The API integrations, virtual account system, and security features were top-notch. He’s one of the best developers we’ve worked with.',
+              stars: 5,
+              image: ''
+            },
+            {
+              name: 'Samuel Adeyemi,',
+              position: 'CEO, SafeBuild Constructions',
+              text: `The website Ibrahim built for our company exceeded expectations. Clean UI, fast loading, mobile-friendly, and professionally designed. He communicates well and delivers on time.`,
+              stars: 5,
+              image: ''
+            },
+            {
+              name: 'Fatimah Lawal',
+              position: 'Lead Engineer, NexaTech',
+              text: `Ibrahim created a secure backend API for our internal tools, and it has been running flawlessly. His understanding of NestJS, authentication, and architecture is outstanding. Highly recommended.`,
+              stars: 5,
+              image: ''
+            },
+            {
+              name: 'Micheal Johnson',
+              position: 'Operations Manager, Vortex Systems',
+              text: `We approached Ibrahim to build a custom software solution, and he went beyond the requirements. His creativity, problem-solving skills, and attention to detail made the project a huge success. A true full-stack professional.`,
+              stars: 5,
+              image: ''
+            }
+          ],
+          image_stack: [
+            '/img/person/person-m-2.webp', '/img/person/person-m-2.webp', '/img/person/person-m-2.webp', '/img/person/person-m-2.webp'
+          ]
+
 
 
       }
@@ -249,12 +330,55 @@ I build fast, secure, and scalable applications using modern technologies like N
         title: 'Resume',
         data: {
           name: 'Ibrahim Tajudeen',
-          nickname: 'Nexo code',          
+          nickname: 'Code Lux',          
           socials: [
             {
               icon: 'bi bi-twitter-x',
               link: 'a.link',
               text: 'a Text'
+            }
+          ],
+          caption: 'A concise overview of my skills, experience, and accomplishments in the world of full-stack development and tech innovation.',
+          pro_skills: [
+            {
+              title: 'Full-Stack Development',
+              percent: 85,
+            },
+            {
+              title: 'Backend Deveploment',
+              percent: 95,
+            },
+            {
+              title: 'Frontend Development',
+              percent: 80,
+            },
+            {
+              title: 'Mobile Development',
+              percent: 75
+            },
+            {
+              title: 'Database Systems',
+              percent: 85
+            },
+            {
+              title: 'Security & Authentication',
+              percent: 90
+            },
+            {
+              title: 'API Integration',
+              percent: 95
+            },
+            {
+              title: 'System Architecture',
+              percent: 90
+            },
+            {
+              title: 'Compiler & Language Design',
+              percent: 65
+            },
+            {
+              title: 'Dev Tools & Versioning',
+              percent: 70
             }
           ]
 
@@ -270,12 +394,51 @@ I build fast, secure, and scalable applications using modern technologies like N
         title: 'Services',
         data: {
           name: 'Ibrahim Tajudeen',
-          nickname: 'Nexo code',          
+          nickname: 'Code Lux',          
           socials: [
             {
               icon: 'bi bi-twitter-x',
               link: 'a.link',
               text: 'a Text'
+            }
+          ],
+          caption: 'Full-stack expertise meets innovative design. Discover the services I provide to transform your vision into reality',
+          services: [
+            {
+              icon: 'bi bi-layers',
+              title: 'Full-Stack Web Development',
+              note: 'End-to-end development of modern, scalable web applications using clean architecture and best practices. From responsive frontends to secure backends, I build systems optimized for performance and growth.',
+              service_id: 1
+            },
+            {
+              icon: 'bi bi-hdd-network',
+              title: 'API & Backend Engineering',
+              note: 'Designing and implementing robust RESTful and GraphQL APIs with strong authentication, efficient data handling, and production-ready backend logic using ASP.NET Core, Node.js, ExpressJs, and NestJS.',
+              service_id: 2
+            },
+            {
+              icon: 'bi bi-phone',
+              title: 'Mobile App Development',
+              note: 'Building high-performance cross-platform mobile applications with Xamarin.Forms, .NET MAUI and C#, featuring intuitive UI, smooth navigation, and seamless integration with backend services.',
+              service_id: 3
+            },
+            {
+              icon: 'bi bi-database-check',
+              title: 'Database Design & Management',
+              note: 'Creating reliable, optimized databases using MongoDB, SQL Server, and SQLite. I ensure clean schemas, secure data flow, and efficient queries for high-volume applications.',
+              service_id: 4
+            },
+            {
+              icon: 'bi bi-shield-lock',
+              title: 'Authentication & Security Integration',
+              note: 'Implementing secure user authentication systems with JWT, bcrypt, role-based access, and advanced permission structures. I build systems designed to protect user data and maintain trust.',
+              service_id: 5
+            },
+            {
+              icon: 'bi bi-diagram-3',
+              title: 'Software Architecture & System Design',
+              note: 'Crafting well-structured, scalable system architecture for web and mobile applications. I focus on modularity, speed, maintainability, and long-term growth across all project layers.',
+              service_id: 6
             }
           ]
 
@@ -354,13 +517,34 @@ I build fast, secure, and scalable applications using modern technologies like N
         title: 'Contact',
         data: {
           name: 'Ibrahim Tajudeen',
-          nickname: 'Nexo code',          
+          nickname: 'Code Lux',          
           socials: [
             {
               icon: 'bi bi-twitter-x',
               link: 'a.link',
               text: 'a Text'
             }
+          ],
+          caption: `I believe great products begin with great conversations. If you have a concept, a plan, or even just a question, feel free to reach out — I’d love to hear from you.`,
+          info: [
+            {
+              icon: 'bi bi-geo-alt',
+              title: 'Location',
+              line1: 'L13 Abubakar Kigo Road New Extension',
+              line2: 'Stadium, Kaduna, Nigeria'
+            },
+            {
+              icon: 'bi bi-phone',
+              title: 'Phone Number',
+              line1: '+234 81 321 66 576',
+              line2: '+234 70 830 64 737'
+            },
+            {
+            icon: 'bi bi-envelope',
+            title: 'Email Address',
+            line1: 'donslice6@gmail.com',
+            line2: 'nexocode10@gmail.com'
+          }
           ]
 
       }
