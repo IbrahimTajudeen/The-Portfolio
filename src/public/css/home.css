@@ -1,0 +1,36 @@
+.image-wrapper{
+    border: 1px solid transparent;
+    transition-duration: .3s;
+}
+
+.image-wrapper .img-cover{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    transition-duration: .3s;
+}
+
+.image-wrapper:hover{
+    box-shadow: 0px 0px 10px 2px var(--fore-color-transparent);
+}
+
+
+.image-wrapper:hover .img-cover{
+    background-color: rgba(0, 0, 0, 0.603);
+}
+
+.image-wrapper .img-cover > * {
+    opacity: 0;
+    transition-duration: .3s;
+}
+
+.image-wrapper:hover .img-cover > * {
+    opacity: 1;
+}
+

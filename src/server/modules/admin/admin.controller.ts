@@ -21,10 +21,24 @@ export class AdminController {
 
   @Render('admin/layout')
   @Get(['index', ''])
+  index(){
+    return {
+        page: 'index',
+        title: 'Dashboard',
+        data: {
+          name: 'Ibrahim Tajudeen',
+          nickname: 'Nexo code',
+      }
+    }
+  }
+
+  
+  @Render('admin/layout')
+  @Get(['home'])
   home(){
     return {
         page: 'home',
-        title: 'Login to your portfolio',
+        title: 'Home Settings',
         data: {
           name: 'Ibrahim Tajudeen',
           nickname: 'Nexo code',

@@ -34,13 +34,11 @@
 .side-nav-menu div > a{
     padding: 12px 10px !important;
     display: flex;
-    width: 95%;
+    width: 100%;
     text-decoration: none;
-    color: inherit;
 }
 
 .side-nav-menu div > i{
-    /* background-color: ; */
     padding: 10px;
     display: flex;
     width: 40px;
@@ -68,12 +66,12 @@
 }
 
 .side-nav-menu ul li:hover > a{
-    color: var(--background-color);
+    color: var(--fore-color);
+    background-color: var(--fore-color);
 }
 
 .side-nav-menu ul li{
-    color: slateblue;
-   padding: 0px 0px 0px 50px;    
+    padding: 0px 0px 0px 50px;    
     vertical-align: central;
     display: flex;
     flex-direction: row;
@@ -86,8 +84,8 @@
 }
 
 .side-nav-menu ul li:hover{
-    color: #5748b5;
-    background-color: #a195ee9e;
+    color: var(--background-color);
+    background-color: var(--fore-color);
 }
 
 .side-nav-menu ul li::before{
@@ -100,21 +98,22 @@
 }
 
 .side-nav-menu ul li:hover::before{
-    background-color: slateblue;
+    background-color: green;
     margin-left: 10px;
 }
 
 
-#menu::-webkit-scrollbar {
+.offcanvas-body::-webkit-scrollbar {
     border-radius: 0px;
-    width: 5px;
+    width: 2px;
+    background-color: var(--fore-color-transparent);
 }
-#menu::-webkit-scrollbar-thumb {
-    background-color: blue;
+.offcanvas-body::-webkit-scrollbar-thumb {
+    background-color: var(--fore-color);
     border-radius: 0;
 }
 
-[class*="bi-"]::before {
+[class*="bi-"]:not(.not-icon)::before {
     margin-right: 5px;
 }
 

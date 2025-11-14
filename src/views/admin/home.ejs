@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-8 order-lg-0 order-1">
         <div>
@@ -5,24 +6,38 @@
                 <h3>Name</h3>
                 <input class="fs-3 w-100 rounded p-2" type="text" value="Ibrahim Tajudeen" disabled />
             </div>
-            <textarea rows="5" class="rounded w-100" disabled ></textarea>
+            <textarea rows="5" class="rounded w-100 mb-3" disabled ></textarea>
+            
+            <div class="d-flex g-3 align-items-center">
+                <h3 class="me-2">Tags</h3>
+                <small>(Three tags max)</small>
+            </div>
+            <div class="p-2 d-flex rounded" style="background-color: var(--fore-color-transparent);">
+                <button class="rounded mx-2" >
+                    <i class="bi-activity"></i>
+                    <span>Ideas</span>
+                    <i class="bi-x"></i>
+                </button>
+                <button style="padding: 8px;" class="d-flex not-icon justify-content-center align-items-center rounded-circle bi-plus">
+                </button>
+            </div>
         </div>
         <div class="mt-3" >
-            <button class="p-3 bi-pen mx-2">Edit</button>
-            <button class="p-3 bi-drive mx-2">Save</button>
+            <button class="rounded bi-pen mx-2" >Edit</button>
+            <button class="rounded bi-copy mx-2" disabled>Save</button>
         </div>
+        <div class="test"></div>
     </div>
     <div class="col-md-4 order-lg-1 order-0">
         <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-            <div class="image-wrapper">
+            <div class="image-wrapper rounded-5" >
                 <div class="position-relative overflow-hidden rounded-5">
                     <img src="/img/profile/profile-img.jpg" alt="Ibrahim Tajudeen" class="img-fluid">
+                    <div class="img-cover">
+                        <button class="not-icon rounded bi-pencil"></button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <h3>Tags</h3>
-        <div class="p-3 ">
-            <button>Code</button>
         </div>
     </div>
 </div>
