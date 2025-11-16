@@ -1,34 +1,17 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Controller, Get, Res } from '@nestjs/common';
+import type { Response } from 'express';
+import * as path from 'path';
 import { DataService } from './data.service';
-import { CreateDatumDto } from './dto/create-datum.dto';
-import { UpdateDatumDto } from './dto/update-datum.dto';
+import { cwd } from 'process';
 
 @Controller('data')
 export class DataController {
   constructor(private readonly dataService: DataService) {}
 
-  @Post()
-  create(@Body() createDatumDto: CreateDatumDto) {
-    return this.dataService.create(createDatumDto);
-  }
-
-  @Get()
-  findAll() {
-    return this.dataService.findAll();
-  }
-
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.dataService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDatumDto: UpdateDatumDto) {
-    return this.dataService.update(+id, updateDatumDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.dataService.remove(+id);
+  @Get('download')
+  download(@Res() res: Response) {
+    const filePath = path.join(process.cwd(), 'src', 'public','files', 'cv.pdf');
+    return res.download(filePath, 'curriculum-vitea.pdf');
   }
 }

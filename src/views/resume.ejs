@@ -65,39 +65,18 @@
               <h3 class="resume-title">Professional Experience</h3>
 
               <div class="resume-content">
-                <article class="experience-item">
-                  <h4>Junior Backend Engineer</h4>
-                  <h5>2025 - Present</h5>
-                  <p class="company"><em>StoneTech, Unguwan Sarki Kaduna</em></p>
-                  <ul>
-                    <li>Work on API Integrations</li>
-                    <li>Managing Database</li>
-                    <li>Building Backend Systems</li>
-                  </ul>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Lead Backend Engineer</h4>
-                  <h5>2025 - Present</h5>
-                  <p class="company"><em>Scorche Pay</em></p>
-                  <ul>
-                    <li>Integrating APIs</li>
-                    <li>Oversees and Manage other developers work</li>
-                    <li>Build Payment Getways</li>
-                    <li>Build scalable backend systems</li>
-                  </ul>
-                </article>
-
-                <article class="experience-item">
-                  <h4>Freelance Developer</h4>
-                  <h5>2021 - Present</h5>
-                  <p class="company"><em>Upwork, LinkedIn</em></p>
-                  <ul>
-                    <li>Work on various web and mobile projects</li>
-                    <li>Upgrading and Re-write exisiting systems</li>
-                    <li>Help Architect Large Systems</li>
-                  </ul>
-                </article>
+                <% data.pro_exp.map((v) => { %>
+                  <article class="experience-item">
+                    <h4><%= v.title %></h4>
+                    <h5><%= v.year %></h5>
+                    <p class="company"><em><%= v.place %></em></p>
+                    <ul>
+                      <% v.roles.map((i) => { %>
+                        <li><%= i %></li>
+                      <% }) %>
+                    </ul>
+                  </article>
+                <% }) %>
               </div>
             </div><!-- End Experience Section -->
           </div>

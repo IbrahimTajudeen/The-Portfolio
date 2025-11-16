@@ -1,12 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Body, Patch, Param, Delete, Render } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 import { PagesService } from './pages.service';
-import { CreatePageDto } from './dto/create-page.dto';
-import { UpdatePageDto } from './dto/update-page.dto';
-import { flushCompileCache } from 'module';
-import { title } from 'process';
-import { not } from 'rxjs/internal/util/not';
-import { text } from 'stream/consumers';
+
 
 @Controller()
 export class PagesController {
@@ -380,6 +375,39 @@ I build fast, secure, and scalable applications using modern technologies like N
               title: 'Dev Tools & Versioning',
               percent: 70
             }
+          ],
+          pro_exp: [
+            {
+              title: 'Junior Backend Engineer',
+              year: '2025 - Present',
+              place: 'StoneTech, Unguwan Sarki Kaduna',
+              roles: [
+                'API Integrations and Managing of small projects',
+                'Managing Database and Integrations',
+                'Building Backend Systems'
+              ]
+            },
+            {
+              title: 'Lead Backend Engineer',
+              year: '2025 - Present',
+              place: 'Scorche Pay',
+              roles: [
+                'Backend Implementation and Integrations',
+                'Third Party API Integration (like PayStack etc)',
+                'Building Payment Getways and Webhooks',
+                'Building scalable backend systems'
+              ]
+            },
+            {
+              title: 'Freelance Developer',
+              year: '2021 - Present',
+              place: 'Upwork, LinkedIn',
+              roles: [
+                'Work on various web and mobile projects',
+                'Upgrading and Re-write exisiting systems',
+                'Help Architect Large Systems'
+              ]
+            }
           ]
 
       }
@@ -454,7 +482,7 @@ I build fast, secure, and scalable applications using modern technologies like N
         title: 'service-details',
         data: {
           name: 'Ibrahim Tajudeen',
-          nickname: 'Nexo code',          
+          nickname: 'Code Lux',          
           socials: [
             {
               icon: 'bi bi-twitter-x',
@@ -475,13 +503,96 @@ I build fast, secure, and scalable applications using modern technologies like N
         title: 'Portfolio',
         data: {
           name: 'Ibrahim Tajudeen',
-          nickname: 'Nexo code',          
+          nickname: 'Code Lux',          
           socials: [
             {
               icon: 'bi bi-twitter-x',
               link: 'a.link',
               text: 'a Text'
             }
+          ],
+          projects: [
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https:www.github.com/ibrahimtajudeen/easy-access-backend',
+              title: 'Easy Access',
+              note: 'A digital market platform',
+              tags: [
+                'Nestjs', 'Supabase', 'API', 'Backend', 'pending', 'private'
+              ],
+              category: 'filter-project filter-api filter-backend'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https:www.github.com/ibrahimtajudeen/event-booking',
+              title: 'Event Booking',
+              note: 'An event booking platform',
+              tags: [
+                'Nestjs', 'Postgres', 'API', 'Backend', '⏸'
+              ],
+              category: 'filter-api filter-backend'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https://www.github.com/ibrahimtajudeen/auth-folio',
+              title: 'Auth Folio',
+              note: 'Authentication & Authorization',
+              tags: [
+                'NestJs', 'JSON', 'API', 'jwt', 'bcrybt', 'finished', 'contributed'
+              ],
+              category: 'filter-api filter-backend filter-auth'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https://www.github.com/ibrahimtajudeen/hospital-management-system',
+              title: 'Hospital Management System',
+              note: 'a site that manage hospital day-to-day operations',
+              tags: [
+                'C#', 'Asp.Net', 'SQL Server', 'EF Core', 'jQuery', '🔃', 'private'
+              ],
+              category: 'filter-health filter-fullstack'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https://www.github.com/ibrahimtajudeen/quickrun-frontend',
+              title: 'Quick Run',
+              note: 'Freelancing Platform',
+              tags: [
+                'C#', '.Net MAUI', 'Nextjs', 'Supabase', 'Typescript', 'Tailwind', '⏸'
+              ],
+              category: 'filter-frontend'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https://github.com/ibrahimtajudeen/isql',
+              title: 'inner Structured Query Language',
+              note: 'A custom sql language build with C# (iSql)',
+              tags: [
+                'C#', 'dev tools', 'meta programming', 'interpreter', 'lexer', 'parser'
+              ],
+              category: 'filter-compiler filter-dev-tools filter-project'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https://github.com/ibrahimtajudeen/sms',
+              title: 'School Management System',
+              note: 'A site that manage school full operations',
+              tags: [
+                'C#', 'iSql','SQL Server', 'jQuery', '⏸ 90%'
+              ],
+              category: 'filter-fullstack filter-project'
+            },
+            {
+              image: '/img/portfolio/portfolio-1.webp',
+              link: 'https://github.com/ibrahimtajudeen/policecrimediary',
+              title: 'Police Crime Diary',
+              note: 'A police crime diary report',
+              tags: [
+                'C#', '🕸 forms', 'Bootstrap', 'SQL Server', '✔'
+              ],
+              category: 'filter-fullstack filter-project'
+            }
+            // filter-dev-tools filter-frontend filter-project filter-compiler filter-health filter-fullstack filter-api filter-backend filter-auth
           ]
 
       }
@@ -496,7 +607,7 @@ I build fast, secure, and scalable applications using modern technologies like N
         title: 'portfolio-details',
         data: {
           name: 'Ibrahim Tajudeen',
-          nickname: 'Nexo code',          
+          nickname: 'Code Lux',          
           socials: [
             {
               icon: 'bi bi-twitter-x',
