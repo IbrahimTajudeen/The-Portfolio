@@ -21,7 +21,7 @@ function sendMail() {
     .then(response => response.json())
     .then(result => {
         console.log('Success:', result);
-        window.location.href = '/contact';
+        alert('Email sent successfully!');    
     })
     .catch(error => {
         console.error('Error:', error);
