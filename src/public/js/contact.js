@@ -1,0 +1,29 @@
+function sendMail() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    const data = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+    };
+    console.log(data);
+    fetch('/auth/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(result => {
+        console.log('Success:', result);
+        window.location.href = '/contact';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}

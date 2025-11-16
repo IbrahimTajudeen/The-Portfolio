@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Post, Body, Redirect } from '@nestjs/common';
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+
+import { Controller, Post, Body, Redirect, Req } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { CreateAuthDto } from './dto/create-auth.dto';
 
@@ -19,4 +21,16 @@ export class AuthController {
       statusCode: 301
     }
   }
+
+  @Post('send-email')
+  @Redirect()
+  async email(@Body() body : any, @Req() req: any) {\
+    const data = await this.authService.sendEmail(body);
+    console.log('Email sent:', data); 
+    return {
+      url: '/contact',
+      statusCode: 301
+    }
+  }
+
 }
