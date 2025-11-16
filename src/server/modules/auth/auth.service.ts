@@ -7,19 +7,22 @@ import { Injectable } from '@nestjs/common';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import * as nodemailer from 'nodemailer';
 import { Http2ServerRequest } from 'http2';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
 
   private transporter;
-  constructor(){
+  constructor(private configService: ConfigService){
+    const password = this.configService.get<string>('EMAIL_PASSWORD')
+    console.log('Password=> ', password)
     this.transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 587,
       secure: false,
       auth: {
         user: 'donslice6@gmail.com',
-        pass: 'ruqh nssx ivjr sljo'
+        pass:  password
       }
     });
   }
