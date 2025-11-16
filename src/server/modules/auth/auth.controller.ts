@@ -24,7 +24,7 @@ export class AuthController {
 
   @Post('send-email')
   @Redirect()
-  async email(@Body() body : any, @Req() req: any) {\
+  async email(@Body() body : any, @Req() req: any) {
     const data = await this.authService.sendEmail(body);
     console.log('Email sent:', data); 
     return {
